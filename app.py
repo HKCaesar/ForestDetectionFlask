@@ -42,7 +42,7 @@ def upload():
 		print ("Accept incoming file:", filename)
 		print ("Save it to:", destination)
 		upload.save(destination)
-	makePrediction("temp.jpg", model)
+	makePrediction(destination, model)
 	return render_template("uploaded.html")
 	
 @app.after_request

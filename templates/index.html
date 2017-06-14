@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Forest detection using Convolutional Neural Networks</title>
+</head>
+
+<body>
+		<h1>Forest detection using <span>Convolutional Neural Networks</span></h1>
+		<form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+			<strong>Image file:&nbsp;</strong><input id="file-picker" type="file" name="file" accept="image/*" multiple>
+			<br/>
+			<div id="msg"></div>
+			<br/>
+			<input type="submit" value="Upload!" id="upload-button">
+			<br/>
+		</form>	
+</body>
+</html>

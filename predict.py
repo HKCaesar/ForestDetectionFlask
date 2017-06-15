@@ -67,7 +67,7 @@ def makePrediction(imagestr, model):
 		input_shape = (10, 10, 3)
 	
 	im = Image.open(imagestr)
-	im.save("/".join([APP_ROOT, "/static/input.jpg"]))
+	im.save("/".join([APP_ROOT, "static/input.jpg"]))
 	x = im.size[0]
 	y = im.size[1]
 	rows = (x//10)
@@ -101,4 +101,4 @@ def makePrediction(imagestr, model):
 				tile.image = back
 
 	result = join(tiles,rows,columns)
-	result.save("/".join([APP_ROOT, "/static/output.jpg"]))
+	result.save("/".join([APP_ROOT, "static/output.jpg"]))

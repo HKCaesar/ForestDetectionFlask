@@ -12,12 +12,16 @@ from flask import Flask, render_template,request
 import keras.models
 #for reading operating system data
 import os
+import sys
+import logging
 
 from load import * 
 from predict import * 
 #initalize our flask app
 app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.INFO)
 
 #global vars for easy reusability
 global model
@@ -61,4 +65,3 @@ if __name__ == "__main__":
 	#run the app locally on the givn port
 	app.run(host='0.0.0.0', port=port)
 	#optional if we want to run in debugging mode
-	app.run(debug=False)

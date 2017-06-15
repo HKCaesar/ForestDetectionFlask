@@ -9,6 +9,8 @@ import math
 import keras.models
 from keras.models import model_from_json
 from keras import backend as K
+import os
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 def slice(filename, number_tiles, columns, rows):
     """
@@ -65,7 +67,7 @@ def makePrediction(imagestr, model):
 		input_shape = (10, 10, 3)
 	
 	im = Image.open(imagestr)
-	im.save("./static/input.jpg")
+	im.save("/".join([APP_ROOT, "input.jpg"]))
 	x = im.size[0]
 	y = im.size[1]
 	rows = (x//10)
@@ -99,4 +101,4 @@ def makePrediction(imagestr, model):
 				tile.image = back
 
 	result = join(tiles,rows,columns)
-	result.save("./static/output.jpg")
+	result.save("/".join([APP_ROOT, "output.jpg"]))

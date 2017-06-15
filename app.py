@@ -41,7 +41,7 @@ def upload():
 		destination = "/".join([target, "temp.jpg"])
 		print ("Accept incoming file:", filename)
 		print ("Save it to:", destination)
-		upload.save(destination)
+		upload.save("temp.jpg")
 	makePrediction(destination, model)
 	return render_template("uploaded.html")
 	
